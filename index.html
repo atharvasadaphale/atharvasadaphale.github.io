@@ -48,10 +48,8 @@
     a { color: var(--accent3); text-decoration: none; }
     a:hover { text-decoration: underline; }
     </style>
-  </head>
-  <body>
-    <style>
-      nav {
+  <style>
+nav {
         position: fixed; top: 0; left: 0; right: 0;
         display: flex; align-items: center; justify-content: space-between;
         padding: 16px 40px;
@@ -157,6 +155,14 @@
     .edu-item p { margin: 0; font-size: 13px; color: var(--muted); }
     .edu-date { font-size: 13px; color: var(--muted); }
     footer { text-align: center; padding: 60px 24px 80px; color: var(--muted); font-size: 13px; }
+    .hero, section { scroll-margin-top: 80px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-in { opacity: 1; transform: none; transition: none; }
+      .glass-card { transition: none; }
+    }
+
     @media (max-width: 720px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
@@ -164,6 +170,8 @@
       section { padding: 60px 20px; }
     }
     </style>
+  </head>
+  <body>
     <nav>
       <div class="nav-name">Atharva Sadaphale</div>
       <div class="nav-right">
@@ -173,6 +181,8 @@
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#leadership">Leadership</a>
           <a href="#contact">Contact</a>
 
         </div>
@@ -190,16 +200,16 @@
         <div class="hero-content">
           <h1>Atharva Sadaphale</h1>
         <p class="role">SAP ABAP Software Engineer</p>
-        <p class="tagline">I build scalable SAP solutions with modern ABAP, RAP, and CDS turning complex business problems into clean, high-performing systems.</p>
+        <p class="tagline">I build scalable SAP solutions with modern ABAP, RAP, and CDS, turning complex business problems into clean, high-performing systems.</p>
         <div class="hero-pills">
         <span class="pill">Pune, India</span>
         <span class="pill">3.5+ Years Experience</span>
-        <span class="pill">SAP Certified x2</span>
+        <span class="pill">2× SAP Certified</span>
         </div>
         <div class="contact-links" id="contact">
         <a href="tel:+919923876257">Call</a>
         <a href="mailto:atharvasadaphale22@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/atharvasadaphale/" target="_blank">LinkedIn</a>
+        <a href="https://linkedin.com/in/atharvasadaphale/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
         </div>
         </div>
@@ -317,7 +327,7 @@
         <div class="job-card">
       <div class="job-head">
         <h3>Software Engineer, SAP ABAP</h3>
-      <span class="job-date">Nov 2025, Present</span>
+      <span class="job-date">Nov 2025 – Present</span>
             </div>
           <p class="job-sub">Evora IT Solutions, Pune, India</p>
           <div class="pill-row">
@@ -341,7 +351,7 @@
     <div class="job-card">
       <div class="job-head">
         <h3>Associate ABAP Developer</h3>
-      <span class="job-date">Jan 2023, Nov 2025</span>
+      <span class="job-date">Jan 2023 – Nov 2025</span>
             </div>
       <p class="job-sub">Cognitus Consulting Pvt Ltd, Mumbai, India</p>
       <div class="pill-row">
@@ -408,7 +418,7 @@
         <h4>Bachelor of Technology, Mechanical Engineering</h4>
       <p>Government College of Engineering</p>
             </div>
-        <span class="edu-date">2017, 2021</span>
+        <span class="edu-date">2017 – 2021</span>
 
     </div>
     <div class="edu-item">
@@ -416,7 +426,7 @@
         <h4>Full Stack Web Development</h4>
       <p>JavaScript, React, Node.js, Acciojob</p>
             </div>
-        <span class="edu-date">Aug 2022, Mar 2023</span>
+        <span class="edu-date">Aug 2022 – Mar 2023</span>
 
     </div>
 
@@ -449,16 +459,29 @@
     const toggleBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') { root.setAttribute('data-theme', 'light'); }
-const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -60px 0px" };
-  const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) { return; }
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(function (el) { appearOnScroll.observe(el); });
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -60px 0px"
+    };
+
+    if ('IntersectionObserver' in window) {
+      const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      faders.forEach(function (el) {
+        appearOnScroll.observe(el);
+      });
+    } else {
+      faders.forEach(function (el) {
+        el.classList.add('visible');
+      });
+    }
   const heroGlow = document.getElementById('heroGlow');
   const heroSection = document.querySelector('.hero');
   if (heroGlow && heroSection) {
