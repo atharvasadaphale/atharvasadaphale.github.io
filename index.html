@@ -297,7 +297,8 @@ nav {
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .skill-card h4 { margin: 0 0 14px; font-size: 15px; color: var(--accent3); }
     .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .cert-card { display: flex; align-items: center; gap: 16px; }
+    .cert-card { display: flex; align-items: center; gap: 16px; color: var(--text); text-decoration: none; }
+    .cert-card:hover { text-decoration: none; }
     .cert-icon {
       width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -595,23 +596,23 @@ nav {
     </section>
 
     <section id="certifications" class="fade-in">
-      <div class="section-tag">Certifications</div>
+      <div class="section-tag">Credentials</div>
       <h2 class="section-title">Certifications</h2>
       <div class="cert-grid">
-        <div class="glass-card cert-card">
+        <a class="glass-card cert-card" href="https://www.credly.com/badges/457a4219-02a9-41c7-9673-39aa6e4fcbda" target="_blank" rel="noopener noreferrer" aria-label="Verify Back-End Developer, ABAP Cloud certification on Credly">
           <div class="cert-icon">🎓</div>
           <div>
             <h4>Back-End Developer, ABAP Cloud</h4>
-          <p>SAP Certified Associate, C_ABAPD_2309</p>
-                    </div>
-        </div>
-        <div class="glass-card cert-card">
+            <p>SAP Certified Associate, C_ABAPD_2309</p>
+          </div>
+        </a>
+        <a class="glass-card cert-card" href="https://www.credly.com/badges/a85805b6-243c-4a37-a098-18abc2050db8" target="_blank" rel="noopener noreferrer" aria-label="Verify Fiori Application Developer certification on Credly">
           <div class="cert-icon">🎓</div>
           <div>
             <h4>Fiori Application Developer</h4>
-          <p>SAP Certified Development Associate, C_FIORD_2404</p>
-                    </div>
-        </div>
+            <p>SAP Certified Development Associate, C_FIORD_2404</p>
+          </div>
+        </a>
       </div>
       </section>
 
