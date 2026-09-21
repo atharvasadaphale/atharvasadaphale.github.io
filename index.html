@@ -314,6 +314,17 @@ nav {
     .edu-item p { margin: 0; font-size: 13px; color: var(--muted); }
     .edu-date { font-size: 13px; color: var(--muted); }
     footer { text-align: center; padding: 60px 24px 80px; color: var(--muted); font-size: 13px; }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color .2s ease;
+    }
+    footer a:hover {
+      color: var(--accent3);
+    }
+
     .hero, section { scroll-margin-top: 80px; }
 
 
@@ -324,9 +335,7 @@ nav {
     .hero-action:hover{transform:translateY(-2px);border-color:var(--accent3);background:var(--pill-bg);color:var(--text);text-decoration:none}
     .hero-action.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
     .hero-action.primary:hover{color:#fff;filter:brightness(1.06)}
-    .hero-action svg{width:18px;height:18px;flex-shrink:0}
-    .resume-note{margin-top:10px;font-size:11px;color:var(--muted);text-align:center}
-    .working-now{margin-top:34px;padding:20px 22px;border:1px solid var(--card-border);border-radius:18px;background:var(--card);backdrop-filter:blur(10px)}
+    .hero-action svg{width:18px;height:18px;flex-shrink:0}    .working-now{margin-top:34px;padding:20px 22px;border:1px solid var(--card-border);border-radius:18px;background:var(--card);backdrop-filter:blur(10px)}
     .working-now-head{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-size:13px;font-weight:700}
     .working-now-dot{width:8px;height:8px;border-radius:50%;background:#34c759;box-shadow:0 0 10px rgba(52,199,89,.45)}
     .skill-filter{display:flex;flex-wrap:wrap;gap:8px;margin:-10px 0 24px}
@@ -743,12 +752,27 @@ nav {
     </section>
 
     <footer>
-      <p>atharvasadaphale.github.io/</p>
+      <p><a href="https://atharvasadaphale.github.io/" target="_blank" rel="noopener noreferrer">atharvasadaphale.github.io</a></p>
     <p>Pune, India</p>
     </footer>
   
 
   <script>
+
+  // Always start at the hero section when the page itself is refreshed.
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.addEventListener('load', function () {
+    const navigation = performance.getEntriesByType('navigation')[0];
+    if (navigation && navigation.type === 'reload') {
+      if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+  });
+
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme');
