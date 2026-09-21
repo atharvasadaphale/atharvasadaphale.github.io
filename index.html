@@ -85,11 +85,19 @@ nav {
     }
     .hero-glow {
       position: absolute;
-      top: 50%; left: 50%;
-      width: 1400px; height: 1400px;
+      top: 50%;
+      left: 50%;
+      width: 120vw;
+      height: 620px;
       transform: translate(-50%, -50%);
-      background: radial-gradient(circle at center, rgba(41,151,255,0.35), rgba(191,90,242,0.22) 35%, rgba(100,210,255,0.12) 55%, transparent 70%);
-      filter: blur(60px);
+      background: radial-gradient(
+        ellipse 65% 70% at center,
+        rgba(41,151,255,0.34) 0%,
+        rgba(191,90,242,0.28) 35%,
+        rgba(100,210,255,0.12) 58%,
+        transparent 78%
+      );
+      filter: blur(55px);
       pointer-events: none;
       z-index: 0;
       transition: opacity 0.2s linear;
@@ -167,6 +175,10 @@ nav {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
       .hero h1 { font-size: 40px; }
+      .hero-glow {
+        width: 180vw;
+        height: 500px;
+      }
       section { padding: 60px 20px; }
     }
     </style>
