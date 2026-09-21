@@ -86,6 +86,91 @@ nav {
       html[data-theme="light"] .theme-toggle .sun-icon { display: none; }
       html[data-theme="light"] .theme-toggle .moon-icon { display: block; }
       
+
+    .resume-nav {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .resume-nav-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .resume-nav-trigger svg { width: 14px; height: 14px; transition: transform .2s ease; }
+    .resume-nav:hover .resume-nav-trigger,
+    .resume-nav:focus-within .resume-nav-trigger {
+      border-color: var(--accent3);
+      background: var(--pill-bg);
+    }
+    .resume-nav:hover .resume-nav-trigger svg,
+    .resume-nav:focus-within .resume-nav-trigger svg {
+      transform: rotate(180deg);
+    }
+    .resume-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 190px;
+      padding: 7px;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 14px 35px rgba(0,0,0,.22);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-5px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+      z-index: 200;
+    }
+    .resume-menu::before {
+      content: "";
+      position: absolute;
+      top: -11px;
+      right: 20px;
+      width: 100%;
+      height: 12px;
+    }
+    .resume-nav:hover .resume-menu,
+    .resume-nav:focus-within .resume-menu,
+    .resume-menu:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .resume-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 9px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .resume-menu a:hover {
+      background: var(--pill-bg);
+      color: var(--accent3);
+      text-decoration: none;
+    }
+    .resume-menu svg { width: 17px; height: 17px; flex-shrink: 0; }
+
     .hero {
       position: relative;
       width: 100%;
@@ -231,6 +316,25 @@ nav {
     footer { text-align: center; padding: 60px 24px 80px; color: var(--muted); font-size: 13px; }
     .hero, section { scroll-margin-top: 80px; }
 
+
+    .availability-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;margin-bottom:22px;border-radius:999px;background:var(--card);border:1px solid var(--card-border);color:var(--muted);font-size:13px;font-weight:600}
+    .availability-dot{width:9px;height:9px;border-radius:50%;background:#34c759;box-shadow:0 0 0 4px rgba(52,199,89,.12),0 0 14px rgba(52,199,89,.5);flex-shrink:0}
+    .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:0 0 24px}
+    .hero-action{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--card-border);background:var(--card);color:var(--text);font-size:14px;font-weight:600;transition:.25s ease}
+    .hero-action:hover{transform:translateY(-2px);border-color:var(--accent3);background:var(--pill-bg);color:var(--text);text-decoration:none}
+    .hero-action.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
+    .hero-action.primary:hover{color:#fff;filter:brightness(1.06)}
+    .hero-action svg{width:18px;height:18px;flex-shrink:0}
+    .resume-note{margin-top:10px;font-size:11px;color:var(--muted);text-align:center}
+    .working-now{margin-top:34px;padding:20px 22px;border:1px solid var(--card-border);border-radius:18px;background:var(--card);backdrop-filter:blur(10px)}
+    .working-now-head{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-size:13px;font-weight:700}
+    .working-now-dot{width:8px;height:8px;border-radius:50%;background:#34c759;box-shadow:0 0 10px rgba(52,199,89,.45)}
+    .skill-filter{display:flex;flex-wrap:wrap;gap:8px;margin:-10px 0 24px}
+    .filter-btn{border:1px solid var(--pill-border);background:var(--pill-bg);color:var(--muted);padding:7px 13px;border-radius:999px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
+    .filter-btn:hover,.filter-btn.active{color:var(--text);border-color:var(--accent3);background:rgba(100,210,255,.10)}
+    .skill-hidden{display:none!important}
+    @media(max-width:720px){.hero-actions{width:100%}.hero-action{width:min(100%,260px)}}
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .fade-in { opacity: 1; transform: none; transition: none; }
@@ -240,6 +344,8 @@ nav {
     @media (max-width: 720px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
+      .nav-right { gap: 10px; }
+      .resume-nav { display: inline-flex; }
       .hero h1 { font-size: 40px; }
       .hero {
         width: 100%;
@@ -260,6 +366,7 @@ nav {
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
+          <a href="#working-with">Current</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
@@ -267,6 +374,35 @@ nav {
           <a href="#leadership">Leadership</a>
 
         </div>
+
+          <div class="resume-nav">
+            <button class="resume-nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+              Resume
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="m7 10 5 5 5-5"></path>
+              </svg>
+            </button>
+            <div class="resume-menu" role="menu">
+              <a href="Atharva_Sadaphale_Resume.pdf" target="_blank" rel="noopener noreferrer"
+                 role="menuitem" data-analytics-event="resume_view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M3 12s3.2-6 9-6 9 6 9 6-3.2 6-9 6-9-6-9-6Z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+                View Resume
+              </a>
+              <a href="Atharva_Sadaphale_Resume.pdf" download role="menuitem"
+                 data-analytics-event="resume_download">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M12 3v11"></path>
+                  <path d="m8 10 4 4 4-4"></path>
+                  <path d="M5 18v2h14v-2"></path>
+                </svg>
+                Download Resume
+              </a>
+            </div>
+          </div>
+
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line></svg>
           <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
@@ -279,6 +415,12 @@ nav {
     <section class="hero">
       <div class="hero-glow" id="heroGlow"></div>
         <div class="hero-content">
+
+          <div class="availability-badge">
+            <span class="availability-dot" aria-hidden="true"></span>
+            <span>Open to Senior SAP ABAP / RAP roles</span>
+          </div>
+
           <h1>Atharva Sadaphale</h1>
         <p class="role">SAP ABAP Software Engineer</p>
         <p class="tagline">I build scalable SAP solutions with modern ABAP, RAP, and CDS, turning complex business problems into clean, high-performing systems.</p>
@@ -287,6 +429,18 @@ nav {
         <span class="pill">3.5+ Years Experience</span>
         <span class="pill">2× SAP Certified</span>
         </div>
+        <div class="hero-actions" aria-label="Contact action">
+          <a class="hero-action primary" href="mailto:atharvasadaphale22@gmail.com"
+             data-analytics-event="email_click">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m4 7 8 6 8-6"></path>
+            </svg>
+            Let's Connect
+          </a>
+        </div>
+
+
         <div class="contact-links" id="contact" aria-label="Contact links">
           <a href="tel:+919923876257" aria-label="Phone" data-analytics-event="phone_click">
             <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -315,6 +469,12 @@ nav {
                     stroke-linecap="round"/>
             </svg>
           </a>
+
+          <a href="https://github.com/atharvasadaphale" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-analytics-event="github_click">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3.2a9 9 0 0 0-2.85 17.54c.45.08.62-.2.62-.44v-1.68c-2.52.55-3.05-1.07-3.05-1.07-.41-1.05-1-1.33-1-1.33-.82-.56.06-.55.06-.55.91.07 1.39.94 1.39.94.8 1.39 2.1.99 2.61.76.08-.59.31-.99.57-1.22-2.01-.23-4.13-1.01-4.13-4.48 0-.99.35-1.8.93-2.44-.09-.23-.4-1.15.09-2.4 0 0 .76-.24 2.48.93A8.5 8.5 0 0 1 12 7.52c.77 0 1.54.1 2.26.3 1.72-1.17 2.48-.93 2.48-.93.49 1.25.18 2.17.09 2.4.58.64.93 1.45.93 2.44 0 3.48-2.12 4.25-4.14 4.47.33.29.62.85.62 1.72v2.58c0 .25.17.53.63.44A9 9 0 0 0 12 3.2Z" fill="currentColor"/>
+            </svg>
+          </a>
         </div>
         </div>
     </section>
@@ -335,8 +495,18 @@ nav {
     <section id="skills" class="fade-in">
       <div class="section-tag">Skills</div>
       <h2 class="section-title">What I work with</h2>
+
+      <div class="skill-filter" role="group" aria-label="Filter skills">
+        <button class="filter-btn active" type="button" data-filter="all">All</button>
+        <button class="filter-btn" type="button" data-filter="sap">SAP</button>
+        <button class="filter-btn" type="button" data-filter="backend">Backend</button>
+        <button class="filter-btn" type="button" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" type="button" data-filter="ui">Fiori / UI</button>
+        <button class="filter-btn" type="button" data-filter="tools">Tools</button>
+      </div>
+
       <div class="skills-grid">
-        <div class="glass-card skill-card">
+        <div class="glass-card skill-card" data-category="sap backend">
           <h4>Core ABAP</h4>
         <div class="pill-row">
         <span class="pill">OO ABAP</span>
@@ -347,7 +517,7 @@ nav {
 
         </div>
         </div>
-        <div class="glass-card skill-card">
+        <div class="glass-card skill-card" data-category="sap backend">
           <h4>ABAP on HANA</h4>
         <div class="pill-row">
         <span class="pill">CDS Views</span>
@@ -357,7 +527,7 @@ nav {
 
         </div>
         </div>
-        <div class="glass-card skill-card">
+        <div class="glass-card skill-card" data-category="sap ui backend">
           <h4>Services & UI</h4>
         <div class="pill-row">
         <span class="pill">OData V2/V4</span>
@@ -367,7 +537,7 @@ nav {
 
         </div>
         </div>
-        <div class="glass-card skill-card">
+        <div class="glass-card skill-card" data-category="sap cloud backend">
           <h4>Integration</h4>
         <div class="pill-row">
         <span class="pill">REST APIs</span>
@@ -378,7 +548,7 @@ nav {
 
         </div>
         </div>
-        <div class="glass-card skill-card">
+        <div class="glass-card skill-card" data-category="tools backend">
           <h4>Practices & Tools</h4>
         <div class="pill-row">
         <span class="pill">ABAP Unit Testing</span>
@@ -389,7 +559,7 @@ nav {
 
         </div>
         </div>
-        <div class="glass-card skill-card">
+        <div class="glass-card skill-card" data-category="sap">
           <h4>SAP Functional Areas</h4>
         <div class="pill-row">
         <span class="pill">Order-to-Cash</span>
@@ -401,6 +571,24 @@ nav {
       </div>
 
 
+    </section>
+
+
+    <section id="working-with" class="fade-in">
+      <div class="section-tag">Currently Working With</div>
+      <h2 class="section-title">Modern SAP stack</h2>
+      <div class="working-now">
+        <div class="working-now-head"><span class="working-now-dot" aria-hidden="true"></span><span>Current focus</span></div>
+        <div class="pill-row">
+          <span class="pill">SAP S/4HANA</span>
+          <span class="pill">ABAP Cloud</span>
+          <span class="pill">RAP</span>
+          <span class="pill">CDS Views</span>
+          <span class="pill">Fiori Elements</span>
+          <span class="pill">SAP BTP</span>
+          <span class="pill">OData V4</span>
+        </div>
+      </div>
     </section>
 
     <section id="certifications" class="fade-in">
@@ -553,7 +741,7 @@ nav {
     </section>
 
     <footer>
-      <p>Atharva Sadaphale, SAP ABAP Software Engineer</p>
+      <p>Atharva Sadaphale, SAP ABAP Software Engineer · Open to Senior SAP ABAP / RAP roles</p>
     <p>Pune, India</p>
     </footer>
   
@@ -601,6 +789,39 @@ nav {
     link.addEventListener('click', function () {
       if (typeof gtag === 'function') {
         gtag('event', link.getAttribute('data-analytics-event'));
+      }
+    });
+  });
+
+
+
+  // Resume menu accessibility: hover/focus opens it; click toggles the expanded state.
+  const resumeNav = document.querySelector('.resume-nav');
+  const resumeTrigger = document.querySelector('.resume-nav-trigger');
+  if (resumeNav && resumeTrigger) {
+    resumeTrigger.addEventListener('click', function () {
+      const expanded = resumeTrigger.getAttribute('aria-expanded') === 'true';
+      resumeTrigger.setAttribute('aria-expanded', String(!expanded));
+    });
+    document.addEventListener('click', function (event) {
+      if (!resumeNav.contains(event.target)) {
+        resumeTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Skill filter + GA4 tracking
+  document.querySelectorAll('.filter-btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+      const filter = button.getAttribute('data-filter');
+      document.querySelectorAll('.filter-btn').forEach(function(btn) { btn.classList.remove('active'); });
+      button.classList.add('active');
+      document.querySelectorAll('.skill-card[data-category]').forEach(function(card) {
+        const categories = (card.getAttribute('data-category') || '').split(' ');
+        card.classList.toggle('skill-hidden', filter !== 'all' && !categories.includes(filter));
+      });
+      if (typeof gtag === 'function') {
+        gtag('event', 'select_content', { content_type: 'skill_filter', content_id: filter });
       }
     });
   });
