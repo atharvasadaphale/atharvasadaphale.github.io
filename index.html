@@ -214,6 +214,11 @@ nav {
     }
     .hero .role { font-size: 22px; color: var(--muted); margin: 0 0 20px; font-weight: 500; }
     .hero .tagline { font-size: 16px; color: var(--muted); max-width: 620px; margin: 0 auto 32px; }
+    .pill-icon {
+      width: 15px;
+      height: 15px;
+      flex: 0 0 15px;
+    }
     .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
     .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .contact-links a {
@@ -314,17 +319,6 @@ nav {
     .edu-item p { margin: 0; font-size: 13px; color: var(--muted); }
     .edu-date { font-size: 13px; color: var(--muted); }
     footer { text-align: center; padding: 60px 24px 80px; color: var(--muted); font-size: 13px; }
-
-    footer a {
-      color: var(--muted);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      transition: color .2s ease;
-    }
-    footer a:hover {
-      color: var(--accent3);
-    }
-
     .hero, section { scroll-margin-top: 80px; }
 
 
@@ -335,7 +329,9 @@ nav {
     .hero-action:hover{transform:translateY(-2px);border-color:var(--accent3);background:var(--pill-bg);color:var(--text);text-decoration:none}
     .hero-action.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
     .hero-action.primary:hover{color:#fff;filter:brightness(1.06)}
-    .hero-action svg{width:18px;height:18px;flex-shrink:0}    .working-now{margin-top:34px;padding:20px 22px;border:1px solid var(--card-border);border-radius:18px;background:var(--card);backdrop-filter:blur(10px)}
+    .hero-action svg{width:18px;height:18px;flex-shrink:0}
+    .resume-note{margin-top:10px;font-size:11px;color:var(--muted);text-align:center}
+    .working-now{margin-top:34px;padding:20px 22px;border:1px solid var(--card-border);border-radius:18px;background:var(--card);backdrop-filter:blur(10px)}
     .working-now-head{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-size:13px;font-weight:700}
     .working-now-dot{width:8px;height:8px;border-radius:50%;background:#34c759;box-shadow:0 0 10px rgba(52,199,89,.45)}
     .skill-filter{display:flex;flex-wrap:wrap;gap:8px;margin:-10px 0 24px}
@@ -434,9 +430,9 @@ nav {
         <p class="role">SAP ABAP Software Engineer</p>
         <p class="tagline">I build scalable SAP solutions with modern ABAP, RAP, and CDS, turning complex business problems into clean, high-performing systems.</p>
         <div class="hero-pills">
-        <span class="pill">Pune, India</span>
-        <span class="pill">3.5+ Years Experience</span>
-        <span class="pill">2× SAP Certified</span>
+        <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Pune, India</span>
+        <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7M3 11h18M10 11v2h4v-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>3.5+ Years Experience</span>
+        <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.1 1.5 2.6-.1.9 2.4 2.1 1.5-.9 2.4.9 2.4-2.1 1.5-.9 2.4-2.6-.1L12 21l-2.1-2.1-2.6.1-.9-2.4-2.1-1.5.9-2.4-.9-2.4 2.1-1.5.9-2.4 2.6.1L12 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m9.2 12 1.8 1.8 3.8-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>2× SAP Certified</span>
         </div>
         <div class="hero-actions" aria-label="Contact action">
           <a class="hero-action primary" href="mailto:atharvasadaphale22@gmail.com"
@@ -479,11 +475,7 @@ nav {
             </svg>
           </a>
 
-          <a href="https://github.com/atharvasadaphale" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-analytics-event="github_click">
-            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3.2a9 9 0 0 0-2.85 17.54c.45.08.62-.2.62-.44v-1.68c-2.52.55-3.05-1.07-3.05-1.07-.41-1.05-1-1.33-1-1.33-.82-.56.06-.55.06-.55.91.07 1.39.94 1.39.94.8 1.39 2.1.99 2.61.76.08-.59.31-.99.57-1.22-2.01-.23-4.13-1.01-4.13-4.48 0-.99.35-1.8.93-2.44-.09-.23-.4-1.15.09-2.4 0 0 .76-.24 2.48.93A8.5 8.5 0 0 1 12 7.52c.77 0 1.54.1 2.26.3 1.72-1.17 2.48-.93 2.48-.93.49 1.25.18 2.17.09 2.4.58.64.93 1.45.93 2.44 0 3.48-2.12 4.25-4.14 4.47.33.29.62.85.62 1.72v2.58c0 .25.17.53.63.44A9 9 0 0 0 12 3.2Z" fill="currentColor"/>
-            </svg>
-          </a>
+
         </div>
         </div>
     </section>
@@ -752,27 +744,12 @@ nav {
     </section>
 
     <footer>
-      <p><a href="https://atharvasadaphale.github.io/" target="_blank" rel="noopener noreferrer">atharvasadaphale.github.io</a></p>
+      <p>atharvasadaphale.github.io/</p>
     <p>Pune, India</p>
     </footer>
   
 
   <script>
-
-  // Always start at the hero section when the page itself is refreshed.
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-  window.addEventListener('load', function () {
-    const navigation = performance.getEntriesByType('navigation')[0];
-    if (navigation && navigation.type === 'reload') {
-      if (window.location.hash) {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-      window.scrollTo(0, 0);
-    }
-  });
-
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme');
