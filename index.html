@@ -1,163 +1,313 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atharva Sadaphale | SAP ABAP Software Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharva Sadaphale | SAP ABAP Software Engineer</title>
   <style>
-    :root {
-      --accent: #2563eb;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --bg: #ffffff;
-          --card: #f8fafc;
-          --border: #e5e7eb;
+      :root {
+            --bg: #060608;
+            --bg-soft: #0d0d11;
+            --card: rgba(255,255,255,0.04);
+            --card-border: rgba(255,255,255,0.08);
+            --text: #f5f5f7;
+            --muted: #98989d;
+            --accent: #2997ff;
+            --accent2: #bf5af2;
+            --accent3: #64d2ff;
       }
-  * { box-sizing: border-box; }
-  body {
-        margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.6;
-}
-  .container {
-        max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-}
-  header {
-        text-align: center;
-    margin-bottom: 32px;
-}
-  header h1 {
-        font-size: 2.2rem;
-    margin: 0 0 6px;
-    letter-spacing: 0.5px;
-}
-  header h2 {
-        font-size: 1.1rem;
-    color: var(--accent);
-    font-weight: 500;
-    margin: 0 0 14px;
-}
-  .contact {
-        color: var(--muted);
-    font-size: 0.95rem;
-  }
-  .contact a { color: var(--accent); text-decoration: none; }
-  .contact a:hover { text-decoration: underline; }
-  section {
-        margin-bottom: 34px;
-}
-  section h3 {
-        font-size: 1.3rem;
-    color: var(--accent);
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 6px;
-    margin-bottom: 16px;
-}
-  .summary {
-        background: var(--card);
-    padding: 18px 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-  }
-  .skills-grid {
-        display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-  .skill-row {
-        background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 0.92rem;
-}
-  .skill-row b { color: var(--text); }
-  .cert-list, ul {
-        padding-left: 20px;
-}
-  .job {
-        margin-bottom: 22px;
-}
-  .job-header {
-        display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: baseline;
-    margin-bottom: 4px;
-}
-  .job-title {
-        font-weight: 700;
-    font-size: 1.05rem;
-}
-  .job-meta {
-        color: var(--muted);
-    font-size: 0.9rem;
-    text-align: right;
-}
-  .job ul {
-        margin-top: 8px;
-    font-size: 0.95rem;
-}
-  .job ul li {
-        margin-bottom: 6px;
-}
-  .project {
-        margin-bottom: 20px;
-}
-  .project h4 {
-        margin: 0 0 4px;
-    font-size: 1rem;
-  }
-  .project .stack {
-    color: var(--muted);
-    font-size: 0.85rem;
-    font-style: italic;
-    margin-bottom: 8px;
-  }
-  .edu-item, .lead-item {
-        margin-bottom: 10px;
-}
-  .edu-header {
-        display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-  .edu-header .dates { color: var(--muted); font-size: 0.9rem; }
-  footer {
-        text-align: center;
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-top: 40px;
-}
-  @media (max-width: 600px) {
-    header h1 { font-size: 1.7rem; }
-    .job-meta { text-align: left; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
       }
-</style>
-      </head>
-      <body>
-      <div class="container">
+      a { color: var(--accent3); text-decoration: none; }
+      a:hover { text-decoration: underline; }
 
-        <header>
-          <h1>Atharva Sadaphale</h1>
-          <h2>SAP ABAP Software Engineer</h2>
-    <div class="contact">
-      +91 9923876257 &nbsp;&middot;&nbsp; Pune, MH &nbsp;&middot;&nbsp;
-      <a href="mailto:atharvasadaphale22@gmail.com">atharvasadaphale22@gmail.com</a> &nbsp;&middot;&nbsp;
-      <a href="https://linkedin.com/in/atharvasadaphale/" target="_blank">LinkedIn</a>
+      nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(6,6,8,0.65);
+            border-bottom: 1px solid var(--card-border);
+            padding: 14px 24px;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+      }
+      nav a { color: var(--muted); transition: color 0.25s ease; }
+      nav a:hover { color: var(--text); text-decoration: none; }
+
+      .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 24px;
+            overflow: hidden;
+      }
+      .glow {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.35;
+            z-index: 0;
+            background: radial-gradient(circle at 30% 30%, var(--accent), transparent 60%),
+                              radial-gradient(circle at 70% 70%, var(--accent2), transparent 60%);
+            animation: drift 14s ease-in-out infinite alternate;
+      }
+      @keyframes drift {
+            0% { transform: translate(-5%, -5%) scale(1); }
+            100% { transform: translate(5%, 5%) scale(1.15); }
+      }
+      .hero-content { position: relative; z-index: 1; max-width: 780px; }
+      .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.78rem;
+            color: var(--accent3);
+            font-weight: 600;
+            margin-bottom: 18px;
+      }
+      .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 700;
+            margin: 0 0 12px;
+            background: linear-gradient(135deg, #ffffff 20%, var(--accent3) 60%, var(--accent2) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -1.5px;
+      }
+      .hero h2 {
+            font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+            font-weight: 500;
+            color: var(--muted);
+            margin: 0 0 28px;
+      }
+      .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            font-size: 0.92rem;
+      }
+      .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: var(--text);
+            transition: all 0.25s ease;
+      }
+      .pill:hover {
+            background: rgba(255,255,255,0.09);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            text-decoration: none;
+      }
+      section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 90px 24px;
+      }
+      .section-head {
+            text-align: center;
+            margin-bottom: 48px;
+      }
+      .section-head .tag {
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 0.75rem;
+            color: var(--accent3);
+            font-weight: 600;
+            margin-bottom: 10px;
+      }
+      .section-head h3 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+      }
+      .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+      }
+      .glass-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 28px 30px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+      }
+      .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.22);
+            background: rgba(255,255,255,0.06);
+      }
+      .summary-text {
+            font-size: 1.08rem;
+            color: #d7d7db;
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto;
+      }
+      .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+      }
+      .skill-row h4 {
+            margin: 0 0 8px;
+            font-size: 0.95rem;
+            color: var(--accent3);
+            font-weight: 600;
+      }
+      .skill-row p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+      .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+      }
+      .cert-grid .glass-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.95rem;
+      }
+      .cert-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+      }
+      .timeline { display: flex; flex-direction: column; gap: 26px; }
+      .job-card { padding: 32px; }
+      .job-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+      }
+      .job-title { font-size: 1.15rem; font-weight: 700; }
+      .job-title span { display: block; font-weight: 500; color: var(--accent3); font-size: 0.95rem; margin-top: 2px; }
+      .job-meta { color: var(--muted); font-size: 0.88rem; text-align: right; white-space: nowrap; }
+      .job-card ul { margin: 0; padding-left: 20px; color: #d0d0d5; font-size: 0.94rem; }
+      .job-card ul li { margin-bottom: 9px; }
+      .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 22px;
+      }
+      .project-grid .glass-card h4 { margin: 0 0 4px; font-size: 1.1rem; }
+      .stack {
+            color: var(--accent3);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 14px;
+      }
+      .project-grid ul { padding-left: 20px; margin: 0; font-size: 0.92rem; color: #d0d0d5; }
+      .project-grid ul li { margin-bottom: 8px; }
+      .edu-grid { display: grid; gap: 16px; }
+      .edu-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+      }
+      .edu-item .degree { font-weight: 700; }
+      .edu-item .school { color: var(--muted); font-weight: 400; }
+      .edu-item .dates {
+            color: var(--accent3);
+            font-size: 0.85rem;
+            font-weight: 600;
+      }
+      .lead-grid { display: grid; gap: 16px; }
+      .lead-item { display: flex; gap: 14px; align-items: flex-start; }
+      .lead-icon {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent2), var(--accent));
+            flex-shrink: 0;
+      }
+      .lead-item p { margin: 0; color: #d0d0d5; font-size: 0.95rem; }
+      footer {
+            text-align: center;
+            padding: 50px 24px 70px;
+            color: var(--muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+      }
+      footer a { color: var(--accent3); }
+      @media (max-width: 640px) {
+            nav { gap: 16px; font-size: 0.78rem; overflow-x: auto; justify-content: flex-start; }
+            section { padding: 60px 18px; }
+            .job-meta { text-align: left; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <a href="#summary">Summary</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+    </nav>
+
+    <section class="hero">
+        <div class="glow"></div>
+        <div class="hero-content">
+              <div class="eyebrow">SAP ABAP &middot; RAP &middot; S/4HANA</div>
+              <h1>Atharva Sadaphale</h1>
+            <h2>SAP ABAP Software Engineer</h2>
+            <div class="contact-row">
+                  <a class="pill" href="tel:+919923876257">+91 9923876257</a>
+                  <span class="pill">Pune, MH</span>
+                  <a class="pill" href="mailto:atharvasadaphale22@gmail.com">atharvasadaphale22@gmail.com</a>
+                  <a class="pill" href="https://linkedin.com/in/atharvasadaphale/" target="_blank">LinkedIn &rarr;</a>
             </div>
-          </header>
-
-          <section>
-            <h3>Summary</h3>
-            <p class="summary">
-              SAP ABAP Software Engineer with 3.5+ years of experience in ABAP development, Object-Oriented ABAP (OO ABAP),
-              and SAP technical architecture across S/4HANA Order-to-Cash and Procure-to-Pay landscapes. Dual SAP-certified
-              (C_ABAPD_2309, C_FIORD_2404) with hands-on expertise in ABAP RESTful Application Programming Model (RAP), CDS Views,
+        </div>
+    </section>
+  <section id="summary">
+    <div class="section-head fade-in">
+        <div class="tag">Overview</div>
+        <h3>Summary</h3>
+    </div>
+    <p class="summary-text fade-in">
+      SAP ABAP Software Engineer with 3.5+ years of experience in ABAP development, Object-Oriented ABAP (OO ABAP),
+      and SAP technical architecture across S/4HANA Order-to-Cash and Procure-to-Pay landscapes. Dual SAP-certified
+      (C_ABAPD_2309, C_FIORD_2404) with hands-on expertise in ABAP RESTful Application Programming Model (RAP), CDS Views,
       ABAP on HANA (AMDP), OData services, ABAP Cloud, SAP Fiori, and SAP BTP-based extensibility. Proven track record of
       decomposing complex business problems into incremental, deliverable components; building scalable solutions using
       REST APIs, RFC and IDoc message-based integrations, and event-driven interfaces; and improving ABAP program
@@ -167,126 +317,192 @@
     </p>
   </section>
 
-  <section>
-            <h3>Technical Skills</h3>
-            <div class="skills-grid">
-              <div class="skill-row"><b>SAP Functional Areas:</b> Order-to-Cash (O2C), Sales and Distribution (SD), Plant Maintenance (PM)</div>
-              <div class="skill-row"><b>Core ABAP:</b> SAP ABAP, Object-Oriented ABAP (OO ABAP), ABAP on HANA, RAP (Managed and Unmanaged), ABAP Cloud, Clean Core ABAP, ABAP Extensibility, Module Pool, Enhancements, BAPIs, BADIs, User-exits, S/4HANA Cloud</div>
-              <div class="skill-row"><b>ABAP on HANA:</b> CDS Views (Interface, Projection, Consumption), AMDP, Code Push-Down Optimization, Performance Tuning, SAP HANA Data Modeling</div>
-              <div class="skill-row"><b>Services and UI:</b> OData V2/V4, SAP Gateway, RAP Service Definitions and Bindings, SAP Fiori, Fiori Elements, SAP Technical Architecture</div>
-              <div class="skill-row"><b>Integration and APIs:</b> REST APIs, SAP BTP Application Development, Side-by-Side Extensions, API Management, SAP Integration Suite (CPI), IDocs, RFC, ALE, Message-Based and Event-Driven Integration, JSON, OAuth</div>
-              <div class="skill-row"><b>Development Practices:</b> Transaction Processing, Automated Testing (ABAP Unit), Database Design and Optimization, Debugging and Root-Cause Troubleshooting, Performance Optimization</div>
-              <div class="skill-row"><b>Tools and Delivery:</b> Eclipse ADT, Git, CI/CD, Agile Delivery, Enhancement and Support Projects, Production Support, Cross-Functional Stakeholder Communication</div>
+    <section id="skills">
+      <div class="section-head fade-in">
+        <div class="tag">Capabilities</div>
+        <h3>Technical Skills</h3>
+      </div>
+    <div class="skills-grid">
+    <div class="glass-card skill-row fade-in">
+    <h4>SAP Functional Areas</h4>
+    <p>Order-to-Cash (O2C), Sales and Distribution (SD), Plant Maintenance (PM)</p>
     </div>
+    <div class="glass-card skill-row fade-in">
+    <h4>Core ABAP</h4>
+    <p>SAP ABAP, Object-Oriented ABAP (OO ABAP), ABAP on HANA, RAP (Managed &amp; Unmanaged), ABAP Cloud, Clean Core ABAP, ABAP Extensibility, Module Pool, Enhancements, BAPIs, BADIs, User-exits, S/4HANA Cloud</p>
+    </div>
+    <div class="glass-card skill-row fade-in">
+    <h4>ABAP on HANA</h4>
+    <p>CDS Views (Interface, Projection, Consumption), AMDP, Code Push-Down Optimization, Performance Tuning, SAP HANA Data Modeling</p>
+    </div>
+    <div class="glass-card skill-row fade-in">
+    <h4>Services &amp; UI</h4>
+    <p>OData V2/V4, SAP Gateway, RAP Service Definitions and Bindings, SAP Fiori, Fiori Elements, SAP Technical Architecture</p>
+    </div>
+    <div class="glass-card skill-row fade-in">
+    <h4>Integration &amp; APIs</h4>
+    <p>REST APIs, SAP BTP Application Development, Side-by-Side Extensions, API Management, SAP Integration Suite (CPI), IDocs, RFC, ALE, Message/Event-Driven Integration, JSON, OAuth</p>
+    </div>
+    <div class="glass-card skill-row fade-in">
+    <h4>Development Practices</h4>
+    <p>Transaction Processing, Automated Testing (ABAP Unit), Database Design &amp; Optimization, Debugging &amp; Root-Cause Troubleshooting, Performance Optimization</p>
+    </div>
+    <div class="glass-card skill-row fade-in">
+    <h4>Tools &amp; Delivery</h4>
+    <p>Eclipse ADT, Git, CI/CD, Agile Delivery, Enhancement &amp; Support Projects, Production Support, Stakeholder Communication</p>
+    </div>
+    </div>
+    </section>
+  
+  <section id="certifications">
+  <div class="section-head fade-in">
+  <div class="tag">Credentials</div>
+  <h3>Certifications</h3>
+  </div>
+  <div class="cert-grid">
+  <div class="glass-card fade-in">
+  <div class="cert-badge">A</div>
+  <div>SAP Certified Associate &ndash; Back-End Developer &ndash; ABAP Cloud (C_ABAPD_2309)</div>
+  </div>
+  <div class="glass-card fade-in">
+    <div class="cert-badge">F</div>
+    <div>SAP Certified Development Associate &ndash; SAP Fiori Application Developer (C_FIORD_2404)</div>
+  </div>
+  </div>
   </section>
 
-  <section>
-    <h3>Certifications</h3>
-    <ul class="cert-list">
-      <li>SAP Certified Associate &ndash; Back-End Developer &ndash; ABAP Cloud (C_ABAPD_2309)</li>
-              <li>SAP Certified Development Associate &ndash; SAP Fiori Application Developer (C_FIORD_2404)</li>
-            </ul>
-          </section>
+    <section id="experience">
+      <div class="section-head fade-in">
+        <div class="tag">Career</div>
+        <h3>Experience</h3>
+      </div>
+    <div class="timeline">
+    <div class="glass-card job-card fade-in">
+    <div class="job-header">
+    <div class="job-title">Evora IT Solutions<span>Software Engineer &ndash; SAP ABAP</span></div>
+    <div class="job-meta">Nov 2025 &ndash; Present<br>Pune, India</div>
+    </div>
+    <ul>
+      <li>Own end-to-end technical delivery of SAP Plant Maintenance (PM) and mobile field-service solutions, acting as a strategic technical partner to business stakeholders on process improvement initiatives.</li>
+    <li>Led the migration of the Work Clearance Permit (WKP) Report from SAP Service and Asset Manager (SSAM) to a RAP-based SAP Fiori application, redesigning the legacy process using Object-Oriented ABAP, CDS Views, and OData V4 services while ensuring SAP Clean Core compliance within the SAM 2310&rarr;2511 upgrade project.</li>
+    </ul>
+    <ul>
+    <li>Designed end-to-end SAP technical architecture including CDS data modeling, behavior definitions, service definitions, and service bindings for the WKP application, developed in Eclipse ADT.</li>
+    <li>Developed and enhanced 5 OData services and REST APIs supporting enterprise and mobile applications, improving data access performance and transaction processing across multiple business units.</li>
+    <li>Engineered custom BADI implementations and OData V4 service enhancements for the SAP S/4HANA Plant Maintenance (PM) module, enabling real-time mobile application support for field operations teams.</li>
+    <li>Designed side-by-side extension patterns and message/event-based integrations leveraging SAP BTP services and S/4HANA APIs, supporting scalable enterprise and mobile solutions.</li>
+    <li>Integrated SAP BTP services with S/4HANA backend systems using RFC, IDoc, and API-based interfaces, supporting extensibility requirements aligned with clean-core compliance standards.</li>
+    </ul>
+    <ul>
+    <li>Wrote automated ABAP Unit tests and performed structured troubleshooting and root-cause analysis for production incidents involving RAP applications, OData services, and API integrations.</li>
+    <li>Collaborated with functional consultants and a global engineering team across project streams to translate business requirements into scalable ABAP architectures, reducing rework cycles and accelerating delivery.</li>
+    <li>Conducted code reviews and mentored junior developers on RAP, ABAP Cloud, and clean-core development best practices.</li>
+    </ul>
+    </div>
 
-          <section>
-            <h3>Experience</h3>
-
-            <div class="job">
-              <div class="job-header">
-                <span class="job-title">Software Engineer &ndash; SAP ABAP, Evora IT Solutions</span>
-                <span class="job-meta">Nov 2025 &ndash; Present &middot; Pune, India</span>
-              </div>
-              <ul>
-                <li>Own end-to-end technical delivery of SAP Plant Maintenance (PM) and mobile field-service solutions, acting as a strategic technical partner to business stakeholders on process improvement initiatives.</li>
-                <li>Led the migration of the Work Clearance Permit (WKP) Report from SAP Service and Asset Manager (SSAM) to a RAP-based SAP Fiori application, redesigning the legacy process using Object-Oriented ABAP, CDS Views, and OData V4 services while ensuring SAP Clean Core compliance within the SAM 2310&rarr;2511 upgrade project.</li>
-                <li>Designed end-to-end SAP technical architecture including CDS data modeling, behavior definitions, service definitions, and service bindings for the WKP application, developed in Eclipse ADT.</li>
-        <li>Developed and enhanced 5 OData services and REST APIs supporting enterprise and mobile applications, improving data access performance and transaction processing across multiple business units.</li>
-                <li>Engineered custom BADI implementations and OData V4 service enhancements for the SAP S/4HANA Plant Maintenance (PM) module, enabling real-time mobile application support for field operations teams.</li>
-                <li>Designed side-by-side extension patterns and message/event-based integrations leveraging SAP BTP services and S/4HANA APIs, supporting scalable enterprise and mobile solutions.</li>
-                <li>Integrated SAP BTP services with S/4HANA backend systems using RFC, IDoc, and API-based interfaces, supporting extensibility requirements aligned with clean-core compliance standards.</li>
-        <li>Wrote automated ABAP Unit tests and performed structured troubleshooting and root-cause analysis for production incidents involving RAP applications, OData services, and API integrations.</li>
-                <li>Collaborated with functional consultants and a global engineering team across project streams to translate business requirements into scalable ABAP architectures, reducing rework cycles and accelerating delivery.</li>
-                <li>Conducted code reviews and mentored junior developers on RAP, ABAP Cloud, and clean-core development best practices.</li>
-              </ul>
-            </div>
-
-            <div class="job">
-              <div class="job-header">
-                <span class="job-title">Associate ABAP Developer, Cognitus Consulting Pvt Ltd</span>
-                <span class="job-meta">Jan 2023 &ndash; Nov 2025 &middot; Mumbai, India</span>
-              </div>
-              <ul>
-                <li>Led migration of 6 legacy SAP GUI applications, including Module Pool programs, to RAP-based Fiori Elements applications using Object-Oriented ABAP, achieving full clean-core compliance across the S/4HANA landscape.</li>
-                <li>Designed end-to-end RAP applications using Interface, Projection, and Consumption CDS Views with Managed Behavior Definitions, reducing average new-feature development time by ~30%.</li>
-                <li>Implemented RAP features including validations, determinations, actions, transaction processing logic, and draft handling for ~10 transactional business scenarios across Order-to-Cash (O2C) workstreams.</li>
-                <li>Developed OData V4 services using RAP Service Definitions and Service Bindings for Fiori Elements applications, serving ~50+ business users per deployment.</li>
-                <li>Designed transactional and analytical CDS Views and AMDP procedures with optimized database design supporting real-time reporting, replacing ~4 legacy ABAP reports with a single optimized Fiori Elements application.</li>
-        <li>Developed side-by-side extension solutions on SAP BTP integrating S/4HANA backend services using REST APIs and OData services, enabling extensibility while maintaining clean-core principles.</li>
-                <li>Built and consumed APIs using JSON payloads and OAuth-based authentication mechanisms for secure communication between SAP and external applications.</li>
-                <li>Architected reusable RAP business objects with strict separation of concerns and strong object-oriented design principles, improving system maintainability and extensibility.</li>
-        <li>Improved database performance and legacy ABAP program efficiency by up to 40% through code optimization and HANA push-down techniques.</li>
-                <li>Wrote automated ABAP Unit tests and led issue analysis, root-cause investigation, debugging, and deployment of scalable ABAP solutions in Agile delivery cycles.</li>
-                <li>Delivered scalable Order-to-Cash (O2C) solutions using modern object-oriented ABAP architecture in Agile sprints, consistently meeting delivery milestones across a ~15-member cross-functional team.</li>
-              </ul>
-            </div>
-          </section>
-
-          <section>
-            <h3>Key Projects</h3>
-
-            <div class="project">
-              <h4>Block Engine</h4>
-              <div class="stack">RAP, CDS, OO ABAP, ABAP on HANA, ABAP Cloud, SAP BTP</div>
-              <ul>
-                <li>Designed RAP-based business object including CDS data model, object-oriented behavior implementation, and OData V4 service exposure, replacing a legacy validation framework serving ~200 business rules.</li>
-                <li>Implemented complex validation logic, determinations, and dynamic rule evaluation within the RAP behavior layer, reducing manual configuration effort by ~35%.</li>
-                <li>Built configuration and monitoring applications using Fiori Elements powered by RAP services, enabling non-technical users to manage rules without SAP GUI access.</li>
-                <li>Exposed RAP business services as REST APIs enabling integration with external systems and cloud-based applications.</li>
-                <li>Ensured full clean-core compliance throughout delivery, making the solution upgrade-safe for future S/4HANA releases.</li>
-              </ul>
-            </div>
-
-            <div class="project">
-              <h4>Multipayer Solution</h4>
-              <div class="stack">RAP, CDS, S/4HANA, OData V4, AMDP</div>
-              <ul>
-                <li>Developed RAP services integrated with Fiori applications enabling real-time transaction processing of Sales Contracts across 3 funding streams within Order-to-Cash workflows.</li>
-                <li>Designed CDS-based data models and database schema supporting flexible funding allocation and analytical reporting scenarios, reducing report generation time by ~25%.</li>
-                <li>Developed API-enabled services supporting secure data exchange using REST principles and JSON payload structures.</li>
-        <li>Implemented scalable RAP-based ABAP extensibility enhancements improving system maintainability and reducing future change effort.</li>
-              </ul>
-            </div>
-          </section>
-
-          <section>
-            <h3>Education</h3>
-            <div class="edu-item">
-              <div class="edu-header">
-                <span><b>Bachelor of Technology, Mechanical Engineering</b> &ndash; Government College of Engineering</span>
-        <span class="dates">2017 &ndash; 2021</span>
-              </div>
-            </div>
-            <div class="edu-item">
-              <div class="edu-header">
-                <span><b>Full Stack Web Development</b> (JavaScript, React, Node.js) &ndash; Acciojob</span>
-                <span class="dates">Aug 2022 &ndash; Mar 2023</span>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <h3>Leadership &amp; Contributions</h3>
-            <ul>
-              <li>Mentored 4 junior developers on RAP, CDS, object-oriented ABAP, and ABAP Cloud development practices, accelerating onboarding for new S/4HANA cloud projects.</li>
-              <li>Delivered 5+ internal knowledge-sharing sessions on Clean Core, RAP, and modern SAP architecture, upskilling a team of ~8 developers across two project streams.</li>
-            </ul>
-          </section>
-
-          <footer>
-            &copy; 2026 Atharva Sadaphale. Built with GitHub Pages.
-          </footer>
-
+      <div class="glass-card job-card fade-in">
+        <div class="job-header">
+          <div class="job-title">Cognitus Consulting Pvt Ltd<span>Associate ABAP Developer</span></div>
+        <div class="job-meta">Jan 2023 &ndash; Nov 2025<br>Mumbai, India</div>
         </div>
-        </body>
-        </html>
-        
+      <ul>
+        <li>Led migration of 6 legacy SAP GUI applications, including Module Pool programs, to RAP-based Fiori Elements applications using Object-Oriented ABAP, achieving full clean-core compliance across the S/4HANA landscape.</li>
+      <li>Designed end-to-end RAP applications using Interface, Projection, and Consumption CDS Views with Managed Behavior Definitions, reducing average new-feature development time by ~30%.</li>
+      <li>Implemented RAP features including validations, determinations, actions, transaction processing logic, and draft handling for ~10 transactional business scenarios across Order-to-Cash (O2C) workstreams.</li>
+      </ul>
+      <ul>
+      <li>Developed OData V4 services using RAP Service Definitions and Service Bindings for Fiori Elements applications, serving ~50+ business users per deployment.</li>
+      <li>Designed transactional and analytical CDS Views and AMDP procedures with optimized database design supporting real-time reporting, replacing ~4 legacy ABAP reports with a single optimized Fiori Elements application.</li>
+      <li>Developed side-by-side extension solutions on SAP BTP integrating S/4HANA backend services using REST APIs and OData services, enabling extensibility while maintaining clean-core principles.</li>
+      <li>Built and consumed APIs using JSON payloads and OAuth-based authentication mechanisms for secure communication between SAP and external applications.</li>
+      </ul>
+      <ul>
+      <li>Architected reusable RAP business objects with strict separation of concerns and strong object-oriented design principles, improving system maintainability and extensibility.</li>
+      <li>Improved database performance and legacy ABAP program efficiency by up to 40% through code optimization and HANA push-down techniques.</li>
+      <li>Wrote automated ABAP Unit tests and led issue analysis, root-cause investigation, debugging, and deployment of scalable ABAP solutions in Agile delivery cycles.</li>
+      <li>Delivered scalable Order-to-Cash (O2C) solutions using modern object-oriented ABAP architecture in Agile sprints, consistently meeting delivery milestones across a ~15-member cross-functional team.</li>
+      </ul>
+      </div>
+    </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head fade-in">
+        <div class="tag">Selected Work</div>
+        <h3>Key Projects</h3>
+      </div>
+    <div class="project-grid">
+    <div class="glass-card fade-in">
+    <h4>Block Engine</h4>
+    <div class="stack">RAP &middot; CDS &middot; OO ABAP &middot; ABAP on HANA &middot; ABAP Cloud &middot; SAP BTP</div>
+    <ul>
+      <li>Designed RAP-based business object including CDS data model, object-oriented behavior implementation, and OData V4 service exposure, replacing a legacy validation framework serving ~200 business rules.</li>
+    <li>Implemented complex validation logic, determinations, and dynamic rule evaluation within the RAP behavior layer, reducing manual configuration effort by ~35%.</li>
+    </ul>
+    </div>
+
+      <div class="glass-card fade-in">
+        <h4>Multipayer Solution</h4>
+      <div class="stack">RAP &middot; CDS &middot; S/4HANA &middot; OData V4 &middot; AMDP</div>
+      <ul>
+        <li>Developed RAP services integrated with Fiori applications enabling real-time transaction processing of Sales Contracts across 3 funding streams within Order-to-Cash workflows.</li>
+      <li>Designed CDS-based data models and database schema supporting flexible funding allocation and analytical reporting scenarios, reducing report generation time by ~25%.</li>
+      <li>Developed API-enabled services supporting secure data exchange using REST principles and JSON payload structures.</li>
+      <li>Implemented scalable RAP-based ABAP extensibility enhancements improving system maintainability and reducing future change effort.</li>
+      </ul>
+      
+      </div>
+    </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head fade-in">
+        <div class="tag">Background</div>
+        <h3>Education</h3>
+      </div>
+    <div class="edu-grid">
+    <div class="glass-card edu-item fade-in">
+    <div><span class="degree">Bachelor of Technology, Mechanical Engineering</span><br><span class="school">Government College of Engineering</span></div>
+    <div class="dates">2017 &ndash; 2021</div>
+    </div>
+    <div class="glass-card edu-item fade-in">
+      <div><span class="degree">Full Stack Web Development</span><br><span class="school">JavaScript, React, Node.js &middot; Acciojob</span></div>
+    <div class="dates">Aug 2022 &ndash; Mar 2023</div>
+    </div>
+    </div>
+    </section>
+
+    <section id="leadership">
+      <div class="section-head fade-in">
+        <div class="tag">Impact</div>
+        <h3>Leadership &amp; Contributions</h3>
+      </div>
+    <div class="glass-card lead-grid fade-in">
+    <div class="lead-item">
+    <div class="lead-icon"></div>
+    <p>Mentored 4 junior developers on RAP, CDS, object-oriented ABAP, and ABAP Cloud development practices, accelerating onboarding for new S/4HANA cloud projects.</p>
+    </div>
+    <div class="lead-item">
+    <div class="lead-icon"></div>
+    <p>Delivered 5+ internal knowledge-sharing sessions on Clean Core, RAP, and modern SAP architecture, upskilling a team of ~8 developers across two project streams.</p>
+    </div>
+    </div>
+    </section>
+  
+  <footer>
+    &copy; 2026 Atharva Sadaphale &middot; <a href="mailto:atharvasadaphale22@gmail.com">Get in touch</a>
+  </footer>
+
+    <script>
+        var els = document.querySelectorAll('.fade-in');
+        var obs = new IntersectionObserver(function(entries) {
+              entries.forEach(function(e) {
+                      if (e.isIntersecting) { e.target.classList.add('visible'); }
+              });
+        }, { threshold: 0.15 });
+        els.forEach(function(el) { obs.observe(el); });
+
+    </script>
+
+  </body>
+</html>
